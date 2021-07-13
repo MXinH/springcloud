@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springcloud_01eureka_server/springcloud_01eureka_server.iml" filepath="$PROJECT_DIR$/springcloud_01eureka_server/springcloud_01eureka_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud_02erueka_client/springcloud_02erueka_client.iml" filepath="$PROJECT_DIR$/springcloud_02erueka_client/springcloud_02erueka_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud_03consultclient/springcloud_03consultclient.iml" filepath="$PROJECT_DIR$/springcloud_03consultclient/springcloud_03consultclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud_04users/springcloud_04users.iml" filepath="$PROJECT_DIR$/springcloud_04users/springcloud_04users.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud_05orders/springcloud_05orders.iml" filepath="$PROJECT_DIR$/springcloud_05orders/springcloud_05orders.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud_06category/springcloud_06category.iml" filepath="$PROJECT_DIR$/springcloud_06category/springcloud_06category.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud_07product/springcloud_07product.iml" filepath="$PROJECT_DIR$/springcloud_07product/springcloud_07product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud_08hystrix/springcloud_08hystrix.iml" filepath="$PROJECT_DIR$/springcloud_08hystrix/springcloud_08hystrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud_09openfeign_hystrix/springcloud_09openfeign_hystrix.iml" filepath="$PROJECT_DIR$/springcloud_09openfeign_hystrix/springcloud_09openfeign_hystrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud_10hystrix_dashboard/springcloud_10hystrix_dashboard.iml" filepath="$PROJECT_DIR$/springcloud_10hystrix_dashboard/springcloud_10hystrix_dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud_parent.iml" filepath="$PROJECT_DIR$/springcloud_parent.iml" />
+    </modules>
+  </component>
+</project>
