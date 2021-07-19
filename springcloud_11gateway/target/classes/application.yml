@@ -1,0 +1,44 @@
+server:
+  port: 7979
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+    gateway:  #网关的工作流程(官网) 客户端或者浏览器向spring cloud的gateway发送请求,网关首先经过gateway handler mapping 处理映射器却解析请求
+              #接着通过gateway web mapping的处理,接着吧请求转给一系列的filter进入后端服务,服务响应的请求再次经过filter和处理器后响应给浏览器或者客户端
+              #gateway handler mapping 和 gateway web mapping 组成了 网关的 断言 predicate
+              #网关 gateway = 断言(前置predicate) + 过滤(后置filter)
+              #断言 :当请求到达网关时，网关前置处理   过滤:当请求满足断言的所有条件之后,会向后端服务转发 之前会经过一些列的过滤 filter
+
+      routes:
+        - id: category_rout # 路由对象的唯一表示
+          uri: lb://category   #实现负载均衡 lb 代表loadbalance 负载均衡 +服务id    #http://localhost:8787 #用来类别服务地址
+          predicates: #断言 用来配置路由规则
+            - Path=/category
+        - id: product_router
+          uri: lb://PRODUCT  #http://localhost:8788
+          predicates:
+            - Path=/product
+            #- After=2021-07-15T17:30:50.641+08:00[Asia/Shanghai] #代表该路由规则必须在指定时间之后生效
+            #- Before=2021-07-15T17:30:50.641+08:00[Asia/Shanghai] #代表该路由规则必须在指定时间之前有效 过了时间失效
+            #- Between=021-07-15T17:30:50.641+08:00[Asia/Shanghai],021-07-15T17:30:50.641+08:00[Asia/Shanghai] #代表路由规则在某个时间段内有效
+            #- Cookie=name,mxh #携带指定cookie的请求才能访问 key(name) value(mxh)
+            #- Cookie=name,[A-Za-z0-9]+ 可用正则表达式
+            #- Header=X-Request-Id,\d+ #携带指定请求头的请求才能访问 key(X-Request-Id) value(\d+ ) \d+代表任意值
+            #- Method=GET #限定指定请求方式
+          #filter: #内置filter
+           # - AddRequestHeader=X-Request-red,blue #用来给路由对象的所有转发请求加入指定请求头信息key(X-Request-red) value(blue) 可以服务中获取
+           # - AddRequestParameter=red,blue #用来给路由对象的所有转发请求加入指定请求参数 key(red) value(blue) 可以服务中获取
+           # - AddResponseHeader=X-Request-Red,Blue #用来路由对象的所有转发请求的响应加入指定头信息
+           # - PrefixPath=/mypath  #用来给路由对象的所有转发请求的url加入指定前缀信息 如:浏览器访问的网关地址为 /product 前缀路径为 /mypath 则转发后端服务地址为 uri+前缀路径+地址栏路径 uri+/mypath+/product
+           # - StripPrefix=2 #用来给路由对象的所有转发请求的url去掉指定n(表示阿拉伯数字)个前缀  重要
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+

@@ -13,9 +13,12 @@
         <module name="springcloud_08hystrix" />
         <module name="springcloud_09openfeign_hystrix" />
         <module name="springcloud_07product" />
+        <module name="springcloud_13configclient" />
         <module name="springcloud_03consultclient" />
         <module name="springcloud_05orders" />
         <module name="springcloud_10hystrix_dashboard" />
+        <module name="springcloud_12configserver" />
+        <module name="springcloud_11gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,6 +32,9 @@
       <module name="springcloud_08hystrix" target="1.8" />
       <module name="springcloud_09openfeign_hystrix" target="1.8" />
       <module name="springcloud_10hystrix_dashboard" target="1.8" />
+      <module name="springcloud_11gateway" target="1.8" />
+      <module name="springcloud_12configserver" target="1.8" />
+      <module name="springcloud_13configclient" target="1.8" />
       <module name="springcloud_parent" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -44,6 +50,9 @@
       <module name="springcloud_08hystrix" options="-parameters" />
       <module name="springcloud_09openfeign_hystrix" options="-parameters" />
       <module name="springcloud_10hystrix_dashboard" options="-parameters" />
+      <module name="springcloud_11gateway" options="-parameters" />
+      <module name="springcloud_12configserver" options="-parameters" />
+      <module name="springcloud_13configclient" options="-parameters" />
     </option>
   </component>
 </project>
